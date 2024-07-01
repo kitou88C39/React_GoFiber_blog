@@ -5,8 +5,11 @@ import (
 	"github.com/neerajbg/blog/database"
 )
 
-func main(){
+func init(){
 	database.ConnectDB()
+}
+func main(){
+	
 	sqlDb, err := database.DBConn.DB()
 
 	if err != nil {
