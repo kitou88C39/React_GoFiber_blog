@@ -1,6 +1,8 @@
 package database
 
 import (
+	"log"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -18,4 +20,6 @@ func main() {
 	if err != nil {
 		panic("Database connection failed.")
 	}
+	log.Println("Connection successful.")
+	DBConn = db
   }
