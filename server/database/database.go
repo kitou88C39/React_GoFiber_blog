@@ -11,7 +11,7 @@ import (
 
 var DBConn *gorm.DB
 
-func main() {
+func ConnectDB() {
 	
 	dsn := "root:neeraj@tcp(127.0.0.1:3306)/fiber_blog?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
