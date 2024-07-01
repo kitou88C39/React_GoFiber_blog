@@ -8,6 +8,11 @@ import (
 func main(){
 	database.ConnectDB()
 	sqlDb, err := database.DBConn.DB()
+
+	if err != nil {
+		panic("Eroor in sql connection.")
+	}
+	defer sqlDb.Close()
 	app := fiber.New()
 	app.Get("/", func(c *fiber.Ctx) error {
 
