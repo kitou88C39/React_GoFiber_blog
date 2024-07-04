@@ -17,17 +17,16 @@ func BlogList(c *fiber.Ctx) error {
 func BlogCreate(c *fiber.Ctx) error {
 	context := fiber.Map{
 		"statusText": "OK",
-		"msg": "Blog List",
+		"msg": "Add a Blog",
 	}
-	c.Status(200)
+	c.Status(201)
 	return c.JSON(context)
-	
 }
 
 func BlogUpdate(c *fiber.Ctx) error {
 	context := fiber.Map{
 		"statusText": "OK",
-		"msg": "Blog List",
+		"msg": "Update Blog",
 	}
 	c.Status(200)
 	return c.JSON(context)
@@ -37,9 +36,8 @@ func BlogUpdate(c *fiber.Ctx) error {
 func BlogDelete(c *fiber.Ctx) error {
 	context := fiber.Map{
 		"statusText": "OK",
-		"msg": "Blog List",
+		"msg": "Delete Blog for the given ID",
 	}
 	c.Status(200)
-	return c.JSON(context)
-	
+	return c.JSON(context)	
 }
