@@ -7,5 +7,7 @@ import (
 
 func setupRotes (app *fiber.Ctx) error {
 	app.Get("/", controller.BlogList)
-	app.Post("/", controller.BlogCreate())
+	app.Post("/", controller.BlogCreate)
+	app.Put("/", controller.BlogUpdate)
+	app.Delete("/", controller.BlogDelete())
 }
