@@ -13,7 +13,7 @@ func main(){
 	sqlDb, err := database.DBConn.DB()
 
 	if err != nil {
-		panic("Eroor in sql connection.")
+		panic("Error in sql connection.")
 	}
 	defer sqlDb.Close()
 	app := fiber.New()
