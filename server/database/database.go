@@ -16,8 +16,8 @@ var DBConn *gorm.DB
 func ConnectDB() {
 
 	user := os.Getenv("db_user")
-	user := os.Getenv("db_user")
-	user := os.Getenv("db_user")
+	password := os.Getenv("db_password")
+	dbname := os.Getenv("db_name")
 
 	dsn := "root:neeraj@tcp(127.0.0.1:3306)/fiber_blog?charset=utf8mb4&parseTime=True&loc=Local"
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{
