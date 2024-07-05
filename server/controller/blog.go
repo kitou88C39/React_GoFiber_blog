@@ -39,6 +39,10 @@ func BlogCreate(c *fiber.Ctx) error {
 
 	result := database.DBConn.Create(record)
 
+	if result.Error != nil {
+		log.Println("Error in saving data.")
+	}
+
 	c.Status(201)
 	return c.JSON(context)
 }
