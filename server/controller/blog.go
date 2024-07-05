@@ -1,6 +1,8 @@
 package controller
 
 import (
+	"log"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/neerajbg/blog/database"
 	"github.com/neerajbg/blog/model"
@@ -31,7 +33,11 @@ func BlogCreate(c *fiber.Ctx) error {
 	}
 	record := new(model.Blog)
 
-	if err := c.BodyParser(&record)
+	if err := c.BodyParser(&record); err != nil{
+		log.Println("Error in parsing request.")
+	}
+
+	result := database.DBConn.Create(record)
 
 	c.Status(201)
 	return c.JSON(context)
