@@ -2,6 +2,8 @@ package controller
 
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/neerajbg/blog/database"
+	"github.com/neerajbg/blog/model"
 )
 
 func BlogList(c *fiber.Ctx) error {
@@ -10,6 +12,11 @@ func BlogList(c *fiber.Ctx) error {
 		"statusText": "OK",
 		"msg": "Blog List",
 	}
+	db := database.DBConn
+
+	var records model.Blog
+
+
 	c.Status(200)
 	return c.JSON(context)
 }
