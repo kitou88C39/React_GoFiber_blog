@@ -16,6 +16,9 @@ func BlogList(c *fiber.Ctx) error {
 
 	var records model.Blog
 
+	db.Find(&records)
+
+	context["blog_records"] = records
 
 	c.Status(200)
 	return c.JSON(context)
