@@ -5,7 +5,7 @@ import (
 	"github.com/neerajbg/blog/controller"
 )
 
-func setupRotes (app *fiber.Ctx) error {
+func SetupRotes (app *fiber.Ctx) error {
 	app.Get("/", controller.BlogList)
 	app.Post("/", controller.BlogCreate)
 	app.Put("/", controller.BlogUpdate)
