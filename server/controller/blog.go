@@ -42,6 +42,8 @@ func BlogCreate(c *fiber.Ctx) error {
 	if result.Error != nil {
 		log.Println("Error in saving data.")
 	}
+	context["msg"] = "Record is saved successully."
+	context["data"] = record
 
 	c.Status(201)
 	return c.JSON(context)
