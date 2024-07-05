@@ -29,6 +29,10 @@ func BlogCreate(c *fiber.Ctx) error {
 		"statusText": "OK",
 		"msg": "Add a Blog",
 	}
+	record := new(model.Blog)
+
+	if err := c.BodyParser(&record)
+
 	c.Status(201)
 	return c.JSON(context)
 }
