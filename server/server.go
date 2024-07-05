@@ -17,7 +17,7 @@ func main(){
 	}
 	defer sqlDb.Close()
 	app := fiber.New()
-	app.Get("/", func(c *fiber.Ctx) error {
+	app.Listen(":8000")
 
 
 		
