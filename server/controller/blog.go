@@ -14,7 +14,7 @@ func BlogList(c *fiber.Ctx) error {
 	}
 	db := database.DBConn
 
-	var records model.Blog
+	var records []model.Blog
 
 	db.Find(&records)
 
