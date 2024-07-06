@@ -26,11 +26,17 @@ function App() {
   return (
     <Container>
       <Row>
-        <Col xs='12 py-2'>
+        <Col xs='12' className='py-2'>
           <h1 className='text-center'>
             React Application with Go fiber Backend
           </h1>
         </Col>
+        {apiData &&
+          apiData.map((record, index) => {
+            <Col xs='4'>
+              <div></div>
+            </Col>;
+          })}
       </Row>
     </Container>
   );
