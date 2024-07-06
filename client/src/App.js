@@ -32,11 +32,12 @@ function App() {
           </h1>
         </Col>
         {apiData &&
-          apiData.map((record, index) => {
+          apiData.map((record, index) => (
             <Col xs='4'>
-              <div></div>
-            </Col>;
-          })}
+              <div>{record.title}</div>
+              <div>{record.post}</div>
+            </Col>
+          ))}
       </Row>
     </Container>
   );
