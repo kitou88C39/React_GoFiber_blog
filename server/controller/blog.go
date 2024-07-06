@@ -83,11 +83,12 @@ func BlogDelete(c *fiber.Ctx) error {
 
 	result := database.DBConn.Save(record)
 
-    if result Error != nil {
-		log.Println("Error in parsing request.")
+    if result.Error != nil {
+		log.Println("Error in saving data.")
 	}
 
 
+	context["data"] = record
 	c.Status(200)
 	return c.JSON(context)
 }
