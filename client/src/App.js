@@ -35,7 +35,7 @@ function App() {
         {apiData &&
           apiData.map((record, index) => (
             <Col xs='4' className='py-5 box'>
-              <div>{record.title}</div>
+              <div className='title'>{record.title}</div>
               <div>{record.post}</div>
             </Col>
           ))}
