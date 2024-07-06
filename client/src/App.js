@@ -1,6 +1,14 @@
+import { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
 function App() {
+  useEffect(() => {
+    const fetchData = () => {};
+    return () => {
+      second;
+    };
+  }, [third]);
+
   return (
     <Container>
       <Row>
