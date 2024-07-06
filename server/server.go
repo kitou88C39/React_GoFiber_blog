@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/joho/godotenv"
 	"github.com/neerajbg/blog/database"
 	"github.com/neerajbg/blog/router"
@@ -15,7 +16,6 @@ func init(){
 	if err := godotenv.Load(".env"); err != nil{
 		log.Fatal("Error in loading .env file.")
 	}
-
 
 	database.ConnectDB()
 }
@@ -29,6 +29,11 @@ func main(){
 	defer sqlDb.Close()
 
 	app := fiber.New()
+
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*",
+		AllowHeaders: "Origin, Content-Type, Accept",
+	}))
 
 	app.Use(logger.New())
 
