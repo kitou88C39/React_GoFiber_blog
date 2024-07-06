@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
+import './App.css';
 
 function App() {
   const [apiData, setApiData] = useState(false);
@@ -33,7 +34,7 @@ function App() {
         </Col>
         {apiData &&
           apiData.map((record, index) => (
-            <Col xs='4' className='py-5'>
+            <Col xs='4' className='py-5 box'>
               <div>{record.title}</div>
               <div>{record.post}</div>
             </Col>
