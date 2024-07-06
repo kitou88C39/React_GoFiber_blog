@@ -59,9 +59,7 @@ func BlogUpdate(c *fiber.Ctx) error {
 		"statusText": "OK",
 		"msg": "Update Blog",
 	}
-	// context["msg"] = "Record is saved successully."
-	// context["data"] = record
-
+	
 	id := c.Params("id")
 	var record model.Blog
 	database.DBConn.First(&record, id)
@@ -80,6 +78,9 @@ func BlogUpdate(c *fiber.Ctx) error {
 	if result.Error != nil {
 		log.Println("Error in saving data.")
 	}
+
+    context["msg"] = "Record is saved successully."
+	context["data"] = record
 
 	c.Status(200)
 	return c.JSON(context)
