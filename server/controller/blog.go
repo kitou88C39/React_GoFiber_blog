@@ -66,6 +66,9 @@ func BlogUpdate(c *fiber.Ctx) error {
 
 	if record.ID == 0 {
 		log.Println("Record not found.")
+
+		context["statusText"] = ""
+		context["msg"] = "Record not Found."
 		c.Status(400)
 		return c.JSON(context)
 	}
@@ -86,9 +89,6 @@ func BlogUpdate(c *fiber.Ctx) error {
 	c.Status(200)
 	return c.JSON(context)
 }
-
-
-
 
 func BlogDelete(c *fiber.Ctx) error {
 	c.Status(400)
