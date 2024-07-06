@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 
 function App() {
+  const [apiData, setApiData] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -10,6 +11,7 @@ function App() {
         const response = await axios.get(apiUrl);
 
         if (response.status === 200) {
+          setApiData(response?.data);
         }
       } catch (error) {
         console.log(error.response);
