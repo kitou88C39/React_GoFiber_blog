@@ -66,6 +66,10 @@ func BlogUpdate(c *fiber.Ctx) error {
 	var record model.Blog
 	database.DBConn.First(&record, id)
 
+	if record.ID == 0 {
+		log.Println("Record not found.")
+	}
+
 	c.Status(200)
 	return c.JSON(context)
 	
