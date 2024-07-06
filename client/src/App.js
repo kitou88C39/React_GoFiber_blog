@@ -1,9 +1,13 @@
-import { Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 
 function App() {
   return (
     <Container>
-      <Row></Row>
+      <Row>
+        <Col xs='12'>
+          <h1>React Application with Go fiber Backend</h1>
+        </Col>
+      </Row>
     </Container>
   );
 }
