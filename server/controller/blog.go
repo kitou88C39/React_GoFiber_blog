@@ -73,10 +73,6 @@ func BlogDelete(c *fiber.Ctx) error {
 	}
 	id := c.Params("id")
 
-	c.Status(200)
-	return c.JSON(context)
-}
-
 	var record model.Blog
 	database.DBConn.First(&record, id)
 
@@ -87,6 +83,8 @@ func BlogDelete(c *fiber.Ctx) error {
 		c.Status(400)
 		return c.JSON(context)
 	}
+	var record model.Blog
+	database.DBConn.First(&record, id)
 
 	if err := c.BodyParser(&record); err != nil {
 		log.Println("Error in parsing request.")
