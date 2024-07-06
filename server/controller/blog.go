@@ -91,6 +91,8 @@ func BlogDelete(c *fiber.Ctx) error {
 		return c.JSON(context)
 	}
 
+	context["statusText"] = "OK."
+	context["msg"] = "Record deleted successfully."
 	c.Status(200)
 	return c.JSON(context)
 }
