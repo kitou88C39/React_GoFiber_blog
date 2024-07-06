@@ -44,6 +44,7 @@ func BlogCreate(c *fiber.Ctx) error {
 	if result.Error != nil {
 		log.Println("Error in saving data.")
 		context["statusText"]=""
+		context["msg"]="Something went wrong."
 	}
 	context["msg"] = "Record is saved successully."
 	context["data"] = record
@@ -67,6 +68,10 @@ func BlogDelete(c *fiber.Ctx) error {
 		"statusText": "OK",
 		"msg": "Delete Blog for the given ID",
 	}
+	id := c.Params("id")
+	var record model.Blog
+	database.DBConn.First(&record, id)
+
 	c.Status(200)
 	return c.JSON(context)	
 }
