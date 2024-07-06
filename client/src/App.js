@@ -11,7 +11,9 @@ function App() {
         const response = await axios.get(apiUrl);
 
         if (response.status === 200) {
-          setApiData(response?.data);
+          if (response?.data.statusText === 'OK') {
+            setApiData(response?.data?.blog_records);
+          }
         }
       } catch (error) {
         console.log(error.response);
