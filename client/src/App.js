@@ -5,10 +5,12 @@ import axios from 'axios';
 function App() {
   useEffect(() => {
     const fetchData = async () => {
-      const apiUrl = 'http://localhost:8000';
-
       try {
+        const apiUrl = 'http://localhost:8000';
         const response = await axios.get(apiUrl);
+
+        if (response.status === 200) {
+        }
       } catch (error) {
         console.log(error.response);
       }
