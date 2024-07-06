@@ -58,6 +58,9 @@ func BlogUpdate(c *fiber.Ctx) error {
 		"statusText": "OK",
 		"msg": "Update Blog",
 	}
+	context["msg"] = "Record is saved successully."
+	context["data"] = record
+
 	c.Status(200)
 	return c.JSON(context)
 	
@@ -69,6 +72,11 @@ func BlogDelete(c *fiber.Ctx) error {
 		"msg": "Delete Blog for the given ID",
 	}
 	id := c.Params("id")
+
+	c.Status(200)
+	return c.JSON(context)
+}
+
 	var record model.Blog
 	database.DBConn.First(&record, id)
 
