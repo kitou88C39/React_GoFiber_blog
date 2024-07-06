@@ -1,13 +1,15 @@
 import { useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import axios from 'axios';
 
 function App() {
   useEffect(() => {
-    const fetchData = () => {};
-    return () => {
-      second;
+    const fetchData = async () => {
+      const apiUrl = 'http://localhost:8000';
     };
-  }, [third]);
+    fetchData();
+    return () => {};
+  }, []);
 
   return (
     <Container>
