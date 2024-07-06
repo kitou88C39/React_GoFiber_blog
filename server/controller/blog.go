@@ -77,6 +77,10 @@ func BlogDelete(c *fiber.Ctx) error {
 		return c.JSON(context)
 	}
 
+	if err := c.BodyParser(&record); err != nil {
+		log.Println("Error in parsing request.")
+	}
+
 	c.Status(200)
 	return c.JSON(context)
 }
