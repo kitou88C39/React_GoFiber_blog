@@ -4,8 +4,10 @@ function App() {
   return (
     <Container>
       <Row>
-        <Col xs='12'>
-          <h1>React Application with Go fiber Backend</h1>
+        <Col xs='12 py-2'>
+          <h1 className='text-center'>
+            React Application with Go fiber Backend
+          </h1>
         </Col>
       </Row>
     </Container>
