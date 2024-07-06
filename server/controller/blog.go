@@ -74,6 +74,7 @@ func BlogDelete(c *fiber.Ctx) error {
 
 	if record.ID == 0 {
 		log.Println("Record not Found.")
+		c.Status(400)
 		return c.JSON(context)
 	}
 
@@ -87,8 +88,9 @@ func BlogDelete(c *fiber.Ctx) error {
 		log.Println("Error in saving data.")
 	}
 
-
+	context["msg"] = "Record updated successfully."
 	context["data"] = record
+
 	c.Status(200)
 	return c.JSON(context)
 }
