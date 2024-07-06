@@ -6,6 +6,12 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const apiUrl = 'http://localhost:8000';
+
+      try {
+        const response = await axios.get(apiUrl);
+      } catch (error) {
+        console.log(error.response);
+      }
     };
     fetchData();
     return () => {};
