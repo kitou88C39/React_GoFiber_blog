@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = 'http://localhost:8000';
+        const apiUrl = process.env.REACT_APP_API_ROOT;
         const response = await axios.get(apiUrl);
 
         if (response.status === 200) {
