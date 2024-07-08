@@ -3,7 +3,6 @@ import React from 'react';
 const Home = () => {
   const [apiData, setApiData] = useState(false);
   useEffect(() => {
-    return;
     const fetchData = async () => {
       try {
         const apiUrl = process.env.REACT_APP_API_ROOT;
