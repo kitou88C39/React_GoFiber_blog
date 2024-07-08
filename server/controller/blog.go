@@ -44,12 +44,12 @@ func BlogDetail(c *fiber.Ctx) error {
 		return c.JSON(context)
 	}
 	
-	resulet := database.DBConn.First(&record)
+	// resulet := database.DBConn.First(&record)
 
-	if resulet.Error != nil {
-		context["msg"] = "Something went wrong"
-		return c.JSON(context)
-	}
+	// if resulet.Error != nil {
+	// 	context["msg"] = "Something went wrong"
+	// 	return c.JSON(context)
+	// }
 
 	context["statusText"] = "OK."
 	context["msg"] = "Record deleted successfully."
