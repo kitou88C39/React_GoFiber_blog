@@ -35,7 +35,7 @@ func main(){
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
-	app.Use(logger.New())
+	app.Use(logger.New)
 
 	router.SetupRoutes(app)
 
